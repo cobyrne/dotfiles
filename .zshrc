@@ -22,7 +22,7 @@ setopt appendhistory
 
 #aliases
 alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
-alias ls='ls -FG'
+alias ls='ls -aFG'
 alias texclean='/Users/colin/texclean.py'
 
 #environment config
