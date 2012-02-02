@@ -1,0 +1,19 @@
+[user]
+	name = Colin O'Byrne
+	email = colin@obyr.net
+[color]
+    ui = auto
+[github]
+	user = cobyrne
+	token = 8a320b762d24dbe3532fdb23055e30a3
+[alias]
+    st = status
+    ci = commit
+    co = checkout
+    di = diff
+    dc = diff --cached
+    amend = commit --amend
+    aa = add --all
+    pom = push origin master
+[merge]
+    tool = vimdiff
