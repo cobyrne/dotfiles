@@ -1,0 +1,59 @@
+set nocompatible               
+
+" Vundle
+" --------------------------------------------------------------------------------
+filetype off                   " required by vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+" Bundles:
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails.git'
+Bundle 'kien/ctrlp.vim.git'
+Bundle 'altercation/vim-colors-solarized.git'
+Bundle 'scrooloose/nerdtree.git'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'chriskempson/base16-vim'
+
+filetype plugin indent on     " required by vundle
+
+" Settings
+" --------------------------------------------------------------------------------
+syntax on
+set number
+set expandtab
+set backspace=indent,eol,start
+
+" Background
+" --------------------------------------------------------------------------------
+set background=dark
+colorscheme base16-default
+
+" Bindings
+" --------------------------------------------------------------------------------
+let mapleader = ","
+let maplocalleader = ";"
+
+map Y           y$ " Make Y consistent with D and C
+
+" Window movement
+nmap <C-j>      <C-w>j
+nmap <C-k>      <C-w>k
+nmap <C-h>      <C-w>h
+nmap <C-l>      <C-w>l
+
+" File tree browser
+map \           :NERDTreeToggle<CR>
+map \|          :NERDTreeFind<CR> " (Pipe) Current file
+
+" Commenting
+map <leader>/   <plug>NERDCommenterToggle
+
+" Searching
+nmap <leader>f  :CtrlP<CR>
+nmap <leader>b  :CtrlPBuffer<CR>
+
+" Misc
+nmap <leader>=  gg=G`` " Auto-indent whole file
