@@ -1,44 +1,47 @@
-set nocompatible               
+" --------------------------------------------------------------------------------
+" see https://github.com/VundleVim/Vundle.vim for how to set up vundle
+" --------------------------------------------------------------------------------
+
+set nocompatible                   " be iMproved               
 
 " Vundle
 " --------------------------------------------------------------------------------
-filetype off                   " required by vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+filetype off                       " required by vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'      " required by vundle
 
-" Bundles:
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails.git'
-Bundle 'kien/ctrlp.vim.git'
-Bundle 'altercation/vim-colors-solarized.git'
-Bundle 'scrooloose/nerdtree.git'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'chriskempson/base16-vim'
-Bundle 'guns/vim-clojure-static'
-Bundle 'tpope/vim-fireplace'
+" Plugins:
+Plugin 'tpope/vim-fugitive'        " git support
+Plugin 'kien/ctrlp.vim.git'        " fuzzy finding
+Plugin 'scrooloose/nerdtree.git'   " file browser
+Plugin 'scrooloose/nerdcommenter'  " un/comment whole lines
+Plugin 'chriskempson/base16-vim'   " pretty colors
 
-filetype plugin indent on     " required by vundle
+call vundle#end()
+filetype plugin indent on          " required by vundle
 
 " Settings
 " --------------------------------------------------------------------------------
 syntax on
 set number
 set expandtab
+set shiftwidth=2
+set softtabstop=2
 set backspace=indent,eol,start
 
 " Background
 " --------------------------------------------------------------------------------
 set background=dark
-colorscheme base16-default
+colorscheme base16-tomorrow-night
 
 " Bindings
 " --------------------------------------------------------------------------------
 let mapleader = ","
 let maplocalleader = ";"
 
-map Y           y$ " Make Y consistent with D and C
+map Y           y$                  " Make Y consistent with D and C
 
 " Window movement
 nmap <C-j>      <C-w>j
@@ -48,7 +51,7 @@ nmap <C-l>      <C-w>l
 
 " File tree browser
 map \           :NERDTreeToggle<CR>
-map \|          :NERDTreeFind<CR> " (Pipe) Current file
+map \|          :NERDTreeFind<CR>     " (Pipe) for current file
 
 " Commenting
 map <leader>/   <plug>NERDCommenterToggle
@@ -58,4 +61,5 @@ nmap <leader>f  :CtrlP<CR>
 nmap <leader>b  :CtrlPBuffer<CR>
 
 " Misc
-nmap <leader>=  gg=G`` " Auto-indent whole file
+nmap <leader>=  gg=G``                " Auto-indent whole file
+
