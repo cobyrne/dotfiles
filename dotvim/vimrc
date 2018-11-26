@@ -41,6 +41,9 @@ colorscheme base16-tomorrow-night
 let mapleader = ","
 let maplocalleader = ";"
 
+nnoremap j gj                       " j and k behave as expected with soft wraps
+nnoremap k gk
+
 map Y           y$                  " Make Y consistent with D and C
 
 " Window movement
